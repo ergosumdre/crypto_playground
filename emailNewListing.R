@@ -31,7 +31,6 @@ cb <- data.table::fread(newCSV)
 # gmail auth to send email
 gm_auth_configure(path = "XXXXXXXXX")
 
-library("gmailr")
 if(nrow(usd) != nrow(cb)){ # Check if there are new records
   # if new records exist, what are they
   new_listings <- usd$base_currency[(is.na(match(usd$base_currency, cb$base_currency)) == TRUE)]
